@@ -1,22 +1,25 @@
 
-formats=html pdf
+formats=html pdf epub
 
 src:=$(wildcard book/*.asciidoc)
 srcroot = book/book.asciidoc
 
-asciidoctor_plugins=pdf diagram rouge
+asciidoctor_plugins=diagram epub3 pdf
 
 asciidoctor_opts=\
   --doctype=book \
 	--source-dir=book --destination-dir=$(dir $@) \
-	$(asciidoctor_plugins:%=--require=asciidoctor-%)
+	$(asciidoctor_plugins:%=--require=asciidoctor-%) \
+	--attribute source-highlighter=rouge
 
 
 all: $(formats)
 $(foreach f,$(formats),$(eval $f: out/$f/book.$f;))
 
+out/%: backend=$(subst .,,$(suffix $@))
+out/%.epub: backend=epub3
 out/%: $(src) | $(dir $@)/
-	asciidoctor $(asciidoctor_opts) --backend=$(subst .,,$(suffix $@)) $(srcroot)
+	asciidoctor $(asciidoctor_opts) --backend=$(backend) $(srcroot)
 
 %/:
 	mkdir -p $@

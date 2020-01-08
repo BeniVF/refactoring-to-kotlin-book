@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-
-for d in docker-images/*
-do
-  docker build -t "$(basename "$d")" "$d"
-done

@@ -1,3 +1,4 @@
 #!/bin/sh
 set -e
-docker run --rm --tty -v $PWD/:/build -w /build book-build make "$@"
+image=asciidoctor/docker-asciidoctor
+docker run --rm --tty -v $PWD/:/documents/ $image make "$@"

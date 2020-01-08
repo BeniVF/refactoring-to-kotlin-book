@@ -1,0 +1,12 @@
+== Example Kotlin Code
+
+This is just some example Kotlin code to test the syntax highlighting in the build.
+
+[source,kotlin]
+----
+fun example(): String {
+  return "an example function"
+}
+----
+
+I hope that looks colourful!

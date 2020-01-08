@@ -6,3 +6,5 @@ Duncan McGregor; Nat Pryce
 include::why-kotlin.asciidoc[]
 
 include::where-to-start.asciidoc[]
+
+include::example-kotlin-code.asciidoc[]
