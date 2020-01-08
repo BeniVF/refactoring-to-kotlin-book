@@ -1,4 +1,8 @@
-= Book Title
-Author A; Author B
+= Refactoring to Kotlin
+Duncan McGregor; Nat Pryce
+:toc:
 
-include::chapter-1.asciidoc[]
+
+include::why-kotlin.asciidoc[]
+
+include::where-to-start.asciidoc[]

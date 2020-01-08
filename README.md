@@ -1,5 +1,9 @@
-Asciidoc book toolchain
-=======================
+Refactoring to Kotlin
+=====================
+
+
+Build
+-----
 
 Run `./build-docker-images` first, to build docker image(s) containing the tools
 
